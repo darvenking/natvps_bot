@@ -1,0 +1,19 @@
+-- create table web_site
+-- (
+--     id        INTEGER primary key autoincrement,
+--     url       varchar(100) not null,
+--     name      varchar(20)  not null,
+--     type      int(1)       not null,
+--     status    int(1)       not null default 1,
+--     create_at timestamp             default (strftime('%Y-%m-%d %H:%M:%f', 'now', 'localtime'))
+-- );
+--
+--
+-- create table site_type
+-- (
+--     id        INTEGER primary key autoincrement,
+--     name      varchar(20) not null,
+--     status    int(1)      not null default 1,
+--     create_at timestamp            default (strftime('%Y-%m-%d %H:%M:%f', 'now', 'localtime'))
+-- )
+

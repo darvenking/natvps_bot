@@ -1,0 +1,53 @@
+bot:
+  api: https://tg.xiu.ee
+  name: mofabala_bot
+  token: 6228946579:AAEgScVl_GrXFGXcbPqkhDPVjvMNR-9DagY
+  owner: 1810124852
+
+server:
+  port: 8000
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/natvpsbot
+    username: postgres
+    password: postgres
+  #    driver-class-name: org.sqlite.JDBC
+  #    url: jdbc:sqlite::resource:db/mofabot.db
+  #    username:
+  #    password:
+  data:
+    redis:
+      database: 1
+      host: 127.0.0.1
+      port: 6379
+      timeout: 3600
+      password:
+      jedis:
+        pool:
+          max-active: 8
+          max-idle: 8
+          max-wait: -1
+          min-idle: 0
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  mapper-locations: classpath*:classpath*:com/natvpsbot/module/*/mapper/*.xml
+  type-aliases-package: com.natvpsbot.*.domain
+
+web:
+  upload-path: /home/bot/data
+
+logging:
+  config: classpath:logback_config.xml
+  level:
+    com:
+      mofabala:
+        mapper: info

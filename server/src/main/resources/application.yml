@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  flyway:
+    # enabled: false
+    locations: classpath:/migrations
+    # flyway 的 clean 命令会删除指定 schema 下的所有 table, 杀伤力太大了, 应该禁掉.
+    cleanDisabled: true
+    # 验证错误时 是否自动清除数据库 高危操作!
+    clean-on-validation-error: false
+    baseline-on-migrate: true
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  undertow:
+    url-charset: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
